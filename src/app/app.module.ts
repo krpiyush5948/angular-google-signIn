@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TestComponent } from './test/test.component';
+
 import { GoogleSignInComponent } from './google-sign-in/google-sign-in.component';
 import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider } from 'angular4-social-login';
 import { RouterModule, Routes } from '@angular/router';
@@ -26,7 +26,7 @@ const appRoute: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent,
+
     GoogleSignInComponent
   ],
   imports: [
