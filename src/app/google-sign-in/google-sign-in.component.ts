@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService, GoogleLoginProvider } from 'angular4-social-login';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -25,7 +26,7 @@ export class GoogleSignInComponent implements OnInit {
     }
     // console.log(this.user+' '+ key1 + '  '+typeof localStorage.getItem(key1))
 
-    constructor( private _socioAuthServ: AuthService){
+    constructor( private _socioAuthServ: AuthService, private router: Router){
 
     }
   
@@ -47,12 +48,20 @@ export class GoogleSignInComponent implements OnInit {
           name: response.name,
           photoUrl: response.photoUrl
         }
-      }
+        this.router.navigate(['/logout'])
+        localStorage.setItem('email', this.user['email']);
+      },
+   
     );
   }
 
   signOut(platform: string){
 
+    this._socioAuthServ.signOut().then(() => {
+      console.log("Signed out");
+      
+    })
+    
   }
 
 }
