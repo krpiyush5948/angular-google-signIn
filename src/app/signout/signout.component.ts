@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class SignoutComponent implements OnInit {
 
+ abc:boolean = false;
+
   constructor(private router:Router) { }
 
   ngOnInit() {
@@ -17,5 +19,10 @@ export class SignoutComponent implements OnInit {
     localStorage.clear();
     this.router.navigate(['login']);
   
+  }
+
+  disable(){
+    this.abc=true;
+    console.log("disabled called")
   }
 }
