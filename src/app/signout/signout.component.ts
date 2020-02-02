@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { $ } from 'protractor';
 
 @Component({
   selector: 'app-signout',
@@ -24,5 +25,24 @@ export class SignoutComponent implements OnInit {
   disable(){
     this.abc=true;
     console.log("disabled called")
+  }
+  able(){
+    // $('#btn').dblclick()
+    console.log("able is called");
+  }
+  isSingleClick: Boolean = true;     
+
+  method1(){
+     this.isSingleClick = true;
+          setTimeout(()=>{
+              if(this.isSingleClick){
+                 alert('hi piyush')
+              }
+           },250)
+  }
+  method2(){
+           this.isSingleClick = false;
+           console.log("method 2 is called")
+           alert("you have clicked twice")
   }
 }

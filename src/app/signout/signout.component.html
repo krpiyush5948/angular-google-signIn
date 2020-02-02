@@ -1,5 +1,8 @@
 <p>signout works!</p>
 <button  (click)="signout();">Sign Out</button>
 <form>
-    <button [disabled]="abc" type="button" (click)= "disable()">add</button>
+    <button (click)="method1()" (dblclick)="method2()" type="button">add</button>
+    <!-- <button  ng-dblclick="doubleClick()"(click)="able()">able</button> -->
 </form>
+
+<a (click)="method1()" (dblclick)="method2()">click me</a>
